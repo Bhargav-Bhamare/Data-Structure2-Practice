@@ -2,6 +2,8 @@
 #include <fstream>
 using namespace std;
 
+//File Management using FStream package
+
 int main() {
     // --- Write ---
     ofstream fout("data1.txt");
