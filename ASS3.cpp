@@ -13,6 +13,8 @@ struct Node{
     }
 };
 
+//Insertion
+
 Node* insert(Node* r,int x){
     if(!r){
         return new Node(x);
@@ -24,6 +26,16 @@ Node* insert(Node* r,int x){
     }
     return r;
 };
+
+//Searching
+bool search(Node* r, int key) {
+    while (r) {
+        if (r->data == key) return true;
+        else if (key < r->data) r = r->left;
+        else r = r->right;
+    }
+    return false;
+}
 
 //Traversal methods
 
