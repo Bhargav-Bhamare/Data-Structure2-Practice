@@ -1,4 +1,5 @@
 #include <iostream>
+#include<stack>
 #include <queue>
 using namespace std;
 
@@ -17,6 +18,25 @@ void dfs(int v){
   for(int i=0;i<5;i++)
     if(graph[v][i] && !visited[i])
      dfs(i);
+}
+
+void explore(int start) {
+  stack<int> s;
+  s.push(start);
+  visited[start] = 1;
+
+  while (!s.empty()) {
+    int v = s.top();
+    s.pop();
+    cout << v << " ";
+
+    for (int i = 4; i >= 0; i--) {
+      if (graph[v][i] && !visited[i]) {
+        s.push(i);
+        visited[i] = 1;
+      }
+    }
+  }
 }
 
 
