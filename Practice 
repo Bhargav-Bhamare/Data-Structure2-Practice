@@ -1,0 +1,146 @@
+#include <iostream>
+using namespace std;
+
+// Node structure
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+
+    Node(int value) {
+        data = value;
+        left = nullptr;
+        right = nullptr;
+    }
+};
+
+// Create new node
+Node* createNode(int value) {
+    Node* newNode = new Node(value);
+    return newNode;
+}
+
+// Insert into BST
+Node* insertNode(Node* root, int value) {
+
+    // If tree is empty
+    if (root == nullptr) {
+        root = createNode(value);
+        return root;
+    }
+
+    // Traverse left or right
+    if (value < root->data) {
+        root->left = insertNode(root->left, value);
+    } else {
+        root->right = insertNode(root->right, value);
+    }
+
+    return root;
+}
+
+// Search in BST
+bool searchNode(Node* root, int key) {
+
+    if (root == nullptr) {
+        return false;
+    }
+
+    if (root->data == key) {
+        return true;
+    }
+
+    if (key < root->data) {
+        return searchNode(root->left, key);
+    } else {
+        return searchNode(root->right, key);
+    }
+}
+
+// Inorder Traversal (Sorted Output)
+void inorderTraversal(Node* root) {
+
+    if (root == nullptr) {
+        return;
+    }
+
+    inorderTraversal(root->left);
+    cout << root->data << " ";
+    inorderTraversal(root->right);
+}
+
+// Find minimum value
+int findMin(Node* root) {
+
+    Node* current = root;
+
+    while (current && current->left != nullptr) {
+        current = current->left;
+    }
+
+    return current->data;
+}
+
+// Find maximum value
+int findMax(Node* root) {
+
+    Node* current = root;
+
+    while (current && current->right != nullptr) {
+        current = current->right;
+    }
+
+    return current->data;
+}
+
+// Find height of tree
+int findHeight(Node* root) {
+
+    if (root == nullptr) {
+        return -1; // height of empty tree
+    }
+
+    int leftHeight = findHeight(root->left);
+    int rightHeight = findHeight(root->right);
+
+    if (leftHeight > rightHeight) {
+        return leftHeight + 1;
+    } else {
+        return rightHeight + 1;
+    }
+}
+
+int main() {
+
+    Node* root = nullptr;
+
+    // Insert elements
+    int values[] = {50, 30, 70, 20, 40, 60, 80};
+    int size = 7;
+
+    for (int i = 0; i < size; i++) {
+        root = insertNode(root, values[i]);
+    }
+
+    // Inorder traversal
+    cout << "Inorder Traversal: ";
+    inorderTraversal(root);
+    cout << endl;
+
+    // Search element
+    int key = 40;
+    if (searchNode(root, key)) {
+        cout << "Element " << key << " found in BST" << endl;
+    } else {
+        cout << "Element " << key << " not found" << endl;
+    }
+
+    // Find Min and Max
+    cout << "Minimum value: " << findMin(root) << endl;
+    cout << "Maximum value: " << findMax(root) << endl;
+
+    // Height
+    cout << "Height of tree: " << findHeight(root) << endl;
+
+    return 0;
+}
