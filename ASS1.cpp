@@ -1,118 +1,75 @@
 #include <iostream>
+#include <vector>
 #include <stack>
 #include <queue>
 
 using namespace std;
 
-// Graph size constant
-const int SIZE = 5;
-
-// Adjacency matrix
-int graph[SIZE][SIZE] = {
-    {0,1,1,0,0},
-    {1,0,0,1,0},
-    {1,0,0,1,0},
-    {0,1,1,0,1},
-    {0,0,0,1,0}
+// Graph using adjacency list
+vector<vector<int>> graph = {
+    {1, 2},      // 0 connected to 1,2
+    {0, 3},      // 1 connected to 0,3
+    {0, 3},      // 2 connected to 0,3
+    {1, 2, 4},   // 3 connected to 1,2,4
+    {3}          // 4 connected to 3
 };
 
-// Visited array
-int visited[SIZE];
+// DFS (Recursive)
+void dfsRecursive(int node, vector<bool> &visited) {
+    cout << node << " ";
+    visited[node] = true;
 
-// Function to reset visited array
-void resetVisited() {
-    for(int i = 0; i < SIZE; i++) {
-        visited[i] = 0;
-    }
-}
-
-// Function to display visited array (extra)
-void showVisited() {
-    cout << "\nVisited Status: ";
-    for(int i = 0; i < SIZE; i++) {
-        cout << visited[i] << " ";
-    }
-    cout << endl;
-}
-
-// Recursive DFS
-void dfs(int v) {
-
-    // Visit node
-    cout << v << " ";
-    visited[v] = 1;
-
-    // Explore neighbors
-    for(int i = 0; i < SIZE; i++) {
-
-        // Check connection
-        if(graph[v][i] == 1) {
-
-            // Check if not visited
-            if(visited[i] == 0) {
-                dfs(i);
-            }
+    for(int neighbor : graph[node]) {
+        if(!visited[neighbor]) {
+            dfsRecursive(neighbor, visited);
         }
     }
 }
 
-// Iterative DFS using stack
-void explore(int start) {
-
+// DFS (Iterative using Stack)
+void dfsIterative(int start) {
+    vector<bool> visited(graph.size(), false);
     stack<int> s;
 
-    // Push starting node
     s.push(start);
-    visited[start] = 1;
 
     while(!s.empty()) {
-
-        // Get top element
-        int currentNode = s.top();
+        int node = s.top();
         s.pop();
 
-        // Print node
-        cout << currentNode << " ";
+        if(!visited[node]) {
+            cout << node << " ";
+            visited[node] = true;
 
-        // Traverse neighbors in reverse
-        for(int i = SIZE - 1; i >= 0; i--) {
-
-            if(graph[currentNode][i] == 1 && visited[i] == 0) {
-
-                s.push(i);
-                visited[i] = 1;
+            // push neighbors (reverse for same order as recursive)
+            for(int i = graph[node].size() - 1; i >= 0; i--) {
+                int neighbor = graph[node][i];
+                if(!visited[neighbor]) {
+                    s.push(neighbor);
+                }
             }
         }
     }
 }
 
-// BFS using queue
+// BFS (Queue)
 void bfs(int start) {
-
+    vector<bool> visited(graph.size(), false);
     queue<int> q;
 
-    // Insert start node
     q.push(start);
-    visited[start] = 1;
+    visited[start] = true;
 
     while(!q.empty()) {
-
-        // Get front element
-        int currentNode = q.front();
+        int node = q.front();
         q.pop();
 
-        // Print node
-        cout << currentNode << " ";
+        cout << node << " ";
 
-        // Traverse neighbors
-        for(int i = 0; i < SIZE; i++) {
-
-            if(graph[currentNode][i] == 1) {
-
-                if(visited[i] == 0) {
-                    visited[i] = 1;
-                    q.push(i);
-                }
+        for(int neighbor : graph[node]) {
+            if(!visited[neighbor]) {
+                visited[neighbor] = true;
+                q.push(neighbor);
             }
         }
     }
@@ -120,22 +77,17 @@ void bfs(int start) {
 
 int main() {
 
+    vector<bool> visited(graph.size(), false);
+
     cout << "DFS (Recursive): ";
-    dfs(0);
+    dfsRecursive(0, visited);
 
-    // Reset visited for next traversal
-    resetVisited();
+    cout << "\nDFS (Iterative): ";
+    dfsIterative(0);
 
-    cout << "\nDFS (Iterative using Stack): ";
-    explore(0);
-
-    // Reset again
-    resetVisited();
-
-    cout << "\nBFS (Using Queue): ";
+    cout << "\nBFS: ";
     bfs(0);
 
     cout << endl;
-
     return 0;
 }
