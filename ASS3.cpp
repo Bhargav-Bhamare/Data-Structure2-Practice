@@ -1,82 +1,122 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-
-//Binary search Tree
-
-struct Node{
+class Node {
+public:
     int data;
-    Node *left;
-    Node *right;
-    Node(int v){
-      data=v,left=right=NULL;
+    Node* left;
+    Node* right;
+
+    Node(int val) {
+        data = val;
+        left = right = NULL;
     }
 };
 
-//Insertion
+class BST {
+private:
+    Node* root;
 
-Node* insert(Node* r,int x){
-    if(!r){
-        return new Node(x);
+public:
+    BST() {
+        root = NULL;
     }
-    if(x < r->data){
-        r ->left= insert(r->left,x);
-    }else{
-        r ->right= insert(r->right,x);
+
+    // Iterative Insertion
+    void insert(int val) {
+        Node* newNode = new Node(val);
+
+        if(root == NULL) {
+            root = newNode;
+            return;
+        }
+
+        Node* current = root;
+        Node* parent = NULL;
+
+        while(current != NULL) {
+            parent = current;
+
+            if(val < current->data)
+                current = current->left;
+            else
+                current = current->right;
+        }
+
+        if(val < parent->data)
+            parent->left = newNode;
+        else
+            parent->right = newNode;
     }
-    return r;
+
+    // Iterative Search
+    bool search(int key) {
+        Node* current = root;
+
+        while(current != NULL) {
+            if(current->data == key)
+                return true;
+            else if(key < current->data)
+                current = current->left;
+            else
+                current = current->right;
+        }
+        return false;
+    }
+
+    // Inorder
+    void inorder(Node* node) {
+        if(node != NULL) {
+            inorder(node->left);
+            cout << node->data << " ";
+            inorder(node->right);
+        }
+    }
+
+    // Preorder
+    void preorder(Node* node) {
+        if(node != NULL) {
+            cout << node->data << " ";
+            preorder(node->left);
+            preorder(node->right);
+        }
+    }
+
+    // Postorder
+    void postorder(Node* node) {
+        if(node != NULL) {
+            postorder(node->left);
+            postorder(node->right);
+            cout << node->data << " ";
+        }
+    }
+
+    // Getter for root (for traversal)
+    Node* getRoot() {
+        return root;
+    }
 };
 
-//Searching
-bool search(Node* r, int key) {
-    while (r) {
-        if (r->data == key) return true;
-        else if (key < r->data) r = r->left;
-        else r = r->right;
-    }
-    return false;
+int main() {
+    BST tree;
+
+    tree.insert(50);
+    tree.insert(30);
+    tree.insert(60);
+    tree.insert(70);
+
+    cout << "Traversals of BST:\n";
+
+    cout << "\nPreorder:\n";
+    tree.preorder(tree.getRoot());
+
+    cout << "\nInorder:\n";
+    tree.inorder(tree.getRoot());
+
+    cout << "\nPostorder:\n";
+    tree.postorder(tree.getRoot());
+
+    cout << endl;
+
+    return 0;
 }
-
-//Traversal methods
-
-//Inorder
-void inorder(Node* r){
-    if(r){
-        inorder(r->left);
-        cout<<r->data<<" ";
-        inorder(r->right);
-    }
-};
-
-//Preorder
-void preorder(Node* r){
-    if(r){
-        cout<<r->data<<" ";
-        preorder(r->left);
-        preorder(r->right);
-    }
-};
-
-//Postorder
-void postorder(Node* r){
-    if(r){
-        postorder(r->left);
-        postorder(r->right);
-        cout<<r->data<<" "; 
-    }
-};
-
-int main(){
-    Node* root= NULL;
-    root=insert(root,50);
-    insert(root,30);
-    insert(root,60);
-    insert(root,70);
-    cout<<"Traversals of The Created Binary Search Tree:"<<endl;
-    cout<<"\n Preoder:"<<endl;
-    preorder(root);
-    cout<<"\n Inorder:"<<endl;
-    inorder(root);
-    cout<<"\n Postorder:"<<endl;
-    postorder(root);
-};
