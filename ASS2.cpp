@@ -81,3 +81,10 @@ int main() {
     prim(cost, n);
     return 0;
 }
+
+
+
+
+
+
+//Code is written for practice of DSA
