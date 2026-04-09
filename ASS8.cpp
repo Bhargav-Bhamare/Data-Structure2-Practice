@@ -14,6 +14,12 @@ int main(){
     hash[i]=k; 
 }
 
+
+
+
+
+
+
 //Searching An Elementin the Hash (Linear Probing Method)
 
   int s=25, i=s%10;
