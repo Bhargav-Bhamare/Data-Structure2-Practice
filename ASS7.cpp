@@ -7,12 +7,6 @@ void printArray(int a[], int n) {
     cout << endl;
 }
 
-
-
-
-
-
-
 // ===================== SELECTION SORT =====================
 void selectionSort(int a[], int n) {
     for (int i = 0; i < n - 1; i++) {
