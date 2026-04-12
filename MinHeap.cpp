@@ -10,6 +10,11 @@ void printHeap(int a[], int n) {
     cout << endl;
 }
 
+
+
+
+
+
 // ===================== HEAPIFY (MIN HEAP) =====================
 void heapify(int a[], int n, int i) {
     int smallest = i;        // Assume root is smallest
