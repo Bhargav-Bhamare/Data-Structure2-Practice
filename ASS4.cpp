@@ -9,7 +9,6 @@ struct Node {
     Node(int v) { data=v; l=r=NULL; h=1; }
 };
 
-
 int height(Node* n){ 
     return n ? n->h : 0;
  }
