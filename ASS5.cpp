@@ -22,8 +22,6 @@ struct Node {
 
 
 
-
-
 // Comparator for priority queue (min heap)
 struct Compare {
     bool operator()(Node* a, Node* b) {
