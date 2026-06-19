@@ -6,11 +6,6 @@ using namespace std;
 
 
 
-
-
-
-
-
 int parent[10];
 // ---------- Find parent ----------
 int find(int i) {
