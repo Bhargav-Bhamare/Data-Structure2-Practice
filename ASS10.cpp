@@ -6,11 +6,6 @@ using namespace std;
 
 
 
-
-
-
-
-
 int main(){
   string text="hello world", pat="world";
   int n=text.size(), m=pat.size();
