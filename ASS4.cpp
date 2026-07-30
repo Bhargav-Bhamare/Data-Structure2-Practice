@@ -7,10 +7,6 @@ using namespace std;
 
 
 
-
-
-
-
 struct Node {
     int data, h;
     Node *l, *r;
