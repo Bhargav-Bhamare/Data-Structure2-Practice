@@ -5,6 +5,17 @@ using namespace std;
 
 
 struct Node {
+
+
+
+
+
+
+
+
+
+
+
     int data, h;
     Node *l, *r;
     Node(int v) { data=v; l=r=NULL; h=1; }
