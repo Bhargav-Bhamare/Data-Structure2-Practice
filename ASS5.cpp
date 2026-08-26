@@ -1,15 +1,7 @@
 #include <iostream>
 #include <queue>
 #include <string>
-using namespace std;
-
-
-
-
-
-
-
-
+using namespace std
 // Node structure
 struct Node {
     char character;
