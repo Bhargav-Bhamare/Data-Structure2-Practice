@@ -1,12 +1,5 @@
 #include <iostream>
-using namespace std;
-
-
-
-
-
-
-
+using namespace std
 //Hash Function
 
 int main(){
