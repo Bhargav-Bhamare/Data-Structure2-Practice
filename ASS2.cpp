@@ -1,6 +1,15 @@
 #include <iostream>
 using namespace std;
 
+
+
+
+
+
+
+
+
+
 int parent[10];
 
 
