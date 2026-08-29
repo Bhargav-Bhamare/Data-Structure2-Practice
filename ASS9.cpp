@@ -2,14 +2,6 @@
 #include <fstream>
 using namespace std;
 
-
-
-
-
-
-
-
-
 // Function to write into file
 void writeFile() {
     ofstream fout;
