@@ -5,6 +5,14 @@ using namespace std
 
 int main(){
 
+
+
+
+
+
+
+
+
   int hash[10]; 
   for(int i=0;i<10;i++) hash[i]=-1;
   int keys[]={15,25,35,20};
