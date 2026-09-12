@@ -5,11 +5,6 @@ using namespace std;
 
 
 
-
-
-
-
-
 // Node structure
 
 struct Node {
