@@ -10,6 +10,17 @@ public:
     Node(int val) {
         data = val;
         left = right = NULL;
+
+
+
+
+
+
+
+
+
+
+        
     }
 };
 
