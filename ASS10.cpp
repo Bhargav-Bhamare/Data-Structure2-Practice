@@ -1,13 +1,4 @@
 
-
-
-
-
-
-
-
-
-
 #include <iostream>
 
 
