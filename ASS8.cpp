@@ -7,6 +7,13 @@ using namespace std
 
 
 
+
+
+
+
+
+
+
 int main(){
 
   int hash[10]; 
