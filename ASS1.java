@@ -1,9 +1,5 @@
 public class ASS1 {
 
-
-
-    
-    
     //Merge Sort
     public static void merge(int arr[],int si, int mid, int ei){
         int temp[] = new int[ei-si+1];
