@@ -1,4 +1,18 @@
 #include <iostream>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 using namespace std;
 // ===================== COMMON FUNCTION =====================
 
