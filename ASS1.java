@@ -7,14 +7,6 @@ public class ASS1 {
 
 
 
-
-
-
-
-
-
-
-
         
         int i = si;
         int j = mid+1;
