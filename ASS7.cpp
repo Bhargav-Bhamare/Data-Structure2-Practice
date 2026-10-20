@@ -1,21 +1,7 @@
 #include <iostream>
 
 using namespace std;
-// ===================== COMMON FUNCTION =====================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// ===================== COMMON FUNCTION ====================
 
 
 
