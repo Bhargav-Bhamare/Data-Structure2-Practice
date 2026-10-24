@@ -2,6 +2,17 @@
 using namespace std
 //Hash Function
 
+
+
+
+
+
+
+
+
+
+
+
 int main(){
 
   int hash[10]; 
