@@ -11,8 +11,6 @@ public:
         left = right = NULL;
 
      
-
-
     }
 };
 class BST {
