@@ -6,17 +6,6 @@ public class ASS1 {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
         
         int i = si;
 
