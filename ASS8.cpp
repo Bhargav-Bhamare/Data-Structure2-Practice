@@ -10,10 +10,6 @@ int main(){
 
 
 
-
-
-
-
   
 
   int hash[10]; 
