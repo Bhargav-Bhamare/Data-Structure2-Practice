@@ -5,17 +5,6 @@ public class ASS1 {
 
         int i = si;
 
-
-
-
-
-
-
-
-        
-
-
-        
         int j = mid+1;
         int k =0;
 
