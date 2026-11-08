@@ -11,6 +11,11 @@ public class ASS1 {
 
 
 
+
+
+
+
+
         while(i<= mid && j<= ei){
             if(arr[i] < arr[j]){
                 temp[k] = arr[i];
