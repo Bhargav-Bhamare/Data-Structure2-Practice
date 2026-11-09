@@ -12,6 +12,14 @@ public:
         data = val;
         left = right = NULL;
 
+
+
+
+
+
+
+
+
      
     }
 };
