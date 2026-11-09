@@ -9,6 +9,11 @@ struct Node {
 };
 
 
+
+
+
+
+
 int height(Node* n){ 
     return n ? n->h : 0;
  }
