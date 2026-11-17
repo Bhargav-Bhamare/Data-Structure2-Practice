@@ -4,8 +4,6 @@ public class ASS1 {
         int temp[] = new int[ei-si+1];
 
      int i = si
-
-
         int j = mid+1;
        int k =0;
 
