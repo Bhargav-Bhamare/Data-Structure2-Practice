@@ -9,6 +9,10 @@ struct Node {
     Node *leftChild;
     Node *rightChild;
 
+
+
+
+
     // Constructor
     Node(char c, int f) {
         character = c;
