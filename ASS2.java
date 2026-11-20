@@ -5,9 +5,6 @@ public class ASS2 {
             System.out.println("transfer disk " + n + " from " + src + " to " + dest); 
             return; 
 
-
-
-
             
         } 
 
