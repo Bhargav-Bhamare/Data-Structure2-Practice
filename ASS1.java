@@ -2,8 +2,7 @@ public class ASS1 {
     //Merge Sort
     public static void merge(int arr[],int si, int mid, int ei){
         int temp[] = new int[ei-si+1];
-         int i = si
-         
+         int i = si       
         int j = mid+1;
        int k =0;
 
