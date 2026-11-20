@@ -12,10 +12,6 @@ public class ASS2 {
 
 
 
-
-
-
-
             
         } 
 
