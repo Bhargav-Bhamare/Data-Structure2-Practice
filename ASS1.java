@@ -15,9 +15,6 @@ public class ASS1 {
                 j++;
             }
             k++;
-
-
-
           
         }
 
