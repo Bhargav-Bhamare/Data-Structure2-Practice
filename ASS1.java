@@ -10,11 +10,6 @@ public class ASS1 {
 
 
 
-
-
-
-
-
         
        int k =0;
       while(i<= mid && j<= ei){
