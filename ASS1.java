@@ -15,6 +15,18 @@ public class ASS1 {
                 j++;
             }
             k++;
+
+
+
+
+
+
+
+
+
+
+
+          
         }
 
         while(i<=mid){
