@@ -1,6 +1,5 @@
 public class ASS1 {
-
-    //Merge Sort
+//Merge Sort
 
 
 
