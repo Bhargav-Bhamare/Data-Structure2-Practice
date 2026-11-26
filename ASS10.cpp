@@ -6,9 +6,6 @@
 
 
 
-
-
-
 using namespace std;
 int main(){
   string text="hello world", pat="world";
