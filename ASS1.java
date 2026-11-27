@@ -6,8 +6,6 @@ public class ASS1 {
 
 
 
-
-
     
 
     public static void merge(int arr[],int si, int mid, int ei){
